@@ -9,15 +9,15 @@
                       <form class="col s12">
                           <div class="row">
                             <div class="input-field col s6 offset-s3">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input  name="username" id="username" type="text" class="validate">
+                                <i class="material-icons prefix">account_balance_wallet</i>
+                                <input [(ngModel)]="idcompany" name="username" id="username" type="text" class="validate">
                                 <label for="username">ID Company</label>
                             </div>
                           </div>
                           <div class="row">
                             <div class="input-field col s6 offset-s3">
                                 <i class="material-icons prefix">lock_outline</i>
-                                <input  name="password" id="pass" type="password" class="validate">
+                                <input  [(ngModel)]="password" name="password" id="pass" type="password" class="validate">
                                 <label for="password">Password</label>
                             </div>
                           </div>
