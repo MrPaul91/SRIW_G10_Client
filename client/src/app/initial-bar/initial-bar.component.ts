@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { generalService } from '../generalService';
+
 @Component({
   selector: 'app-initial-bar',
   templateUrl: './initial-bar.component.html',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InitialBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private generalService: generalService) { }
 
   ngOnInit() {
+  }
+
+
+  changeBarLogOut(){
+
+    this.generalService.setCompanyLogged("");
+    this.generalService.initialNavBar = false;
+
+    alert("Session Finalizada");
+
+  
   }
 
 }

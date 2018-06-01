@@ -14,6 +14,12 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 //Servicios
 
 import {generalService} from './generalService';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { AddjobComponent } from './addjob/addjob.component';
+import { ViewJobsComponent } from './view-jobs/view-jobs.component';
+
+
+
 
 
 @NgModule({
@@ -21,7 +27,10 @@ import {generalService} from './generalService';
     AppComponent,
     LoginCompanyComponent,
     InitialBarComponent,
-    MenucompanyComponent
+    MenucompanyComponent,
+    SignUpComponent,
+    AddjobComponent,
+    ViewJobsComponent
   ],
   imports: [
     BrowserModule,

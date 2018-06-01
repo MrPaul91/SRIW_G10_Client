@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { generalService } from '../generalService';
 
@@ -13,7 +13,9 @@ export class LoginCompanyComponent implements OnInit {
   private idcompany: string;
   private password: string;
 
-  constructor(private router: Router, private service: generalService) {
+
+  constructor(private router: Router, private service: generalService,
+ ) {
 
   }
 
@@ -21,28 +23,39 @@ export class LoginCompanyComponent implements OnInit {
   }
   postLogInData() {
 
-    console.log(this.idcompany);
 
-    console.log(this.password);
+    this.service.login(this.idcompany, this.password).subscribe(data => {
 
-    console.log(this.service.getApp());
+      if (typeof data[0].name === "undefined") {
+        alert("Id de compañia invalida o contraseña invalida.");
+      }
+      else{
+        
+        this.service.setCompanyLogged(this.idcompany);
 
-    this.service.sent().subscribe(data => {
+        this.service.companyName = data[0].name;
 
-      console.log(data);
-      /*const dataJson = JSON.parse(JSON.stringify(data));
+        this.service.companySector = data[0].sector;
 
-      console.log(dataJson.data);*/
+        this.service.companyDireccion = data[0].direccion;
 
+        
+
+        alert("Bienvenido al recomendador");
+
+        this.service.initialNavBar = true;
+        
+        this.router.navigateByUrl('/company');
+      }
+  
+     
+    },
+    error => {
+
+      console.log(error);
     }
-    );
-
-
-    this.router.navigateByUrl('/company');
-
-
-
-
+  
+  );
 
 
 

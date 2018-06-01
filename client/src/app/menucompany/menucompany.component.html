@@ -1,4 +1,29 @@
 <div class="container">
 
-   <h2> Menu company</h2>
+   <span> <b>Menu Compañia </b></span>
+
+   <ul class="collection">
+    <li class="collection-item"><span> <b>Id Compañia:  </b></span>{{id}}</li>
+    <li class="collection-item"><span> <b>Nombre Compañia:  </b></span>{{name}}</li>
+    <li class="collection-item"><span> <b>Direccion Compañia:  </b></span>{{direccion}}</li>
+    <li class="collection-item"><span> <b>Sector Compañia:  </b></span>{{sector}}</li>
+
+  </ul>
+ 
+  <div class="row">
+        <button (click)="agregarTrabajo()" class="btn waves-effect waves-light green lighten-1" type="submit" name="action">Agregar Trabajo
+                <i class="material-icons right"></i>
+        </button>
+
+        <button (click)="mirarTrabajos()" class="btn waves-effect waves-light green lighten-1" type="submit" name="action">Ver Trabajos
+                        <i class="material-icons right"></i>
+        </button>
+
+        <button (click)="postLogInData()" class="btn waves-effect waves-light green lighten-1" type="submit" name="action">Contratar Empleado
+                <i class="material-icons right"></i>
+        </button>
+
+  </div>
+
+
 </div>
